@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Armstrong Number</title>
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Code to find all the armstrong number within the given range</h1>
+            <h3>Lets Know what is an Armstrong number??</h3>
+            <p>When the sum of the cube of the individual digits of a number is equal to that number, the number is called Armstrong number. 
+            <br>
+            For example 153. Sum of its divisor is 13 + 53;+ 33; = 1+125+27 = 153
+            </p>
+            <hr>
+        </section>
+    </header>
+    <main>
+        <p><b>Sample Code</b></p>
+        <pre>
+        <code>
+            #include<stdio.h>  
+            #include<math.h> 
+            float armstrong(int num)  
+            {  
+                int rem, n = 0, temp;  
+                float sum = 0.0;  
+                temp = num;  
+                while(temp)  
+                {  
+                    temp = temp / 10;  
+                    n++;  
+                }  
+                while(num)  
+                {  
+                    rem = num % 10;  
+                    sum = sum + pow(rem, n);  
+                    num = num / 10;  
+                }   
+                return(sum);  
+            } 
+            int main()  
+            {  
+                int count, start, end, temp;  
+              
+                printf("Enter start and end values\n");  
+                scanf("%d%d", &start, &end);  
+              
+                if(start > end)  
+                {  
+                    temp = start;  
+                    start= end;  
+                    end  = temp;  
+                }  
+              
+                printf("Armstrong numbers between %d and %d are\n", start, end);  
+              
+                for(count = start; count <= end; count++)  
+                {  
+                    if(count == armstrong(count))  
+                    {  
+                        printf("%d is an Armstrong number\n", count);  
+                    }  
+                }  
+              
+                return 0;  
+            }
+        </code>
+        </pre>
+        <br>
+        <hr>
+        <section>
+            <p><b>Sample Input:</b></p>
+            <p>Enter start and end values: 100 200</p>
+            <p><b>Sample Output:</b></p>
+            <p>Armstrong numbers between 100 and 200 are</p>
+            <p>153 is an Armstrong number</p>
+        </section>
+        <br>
+        <hr>
+        <section>
+            <p><b>Variables used in program are as follows</b></p>
+            <p>Here we used a variable <b>count</b> in the main to check each no in the range whether the no is armstrong or not.</p>
+            <p>Here we used <b>rem</b> to calculate remainder of the num.</p>
+            <p>Here we used <b>temp</b> variable to store the num temporarily.</p>
+            <p>Here we used <b>sum</b> variable in the program.</p>
+        </section>
+    </main>
+
+    <footer>
+        
+    </footer>
+    
+   
+  
+
+</body>
+</html>
+
